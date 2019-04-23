@@ -108,6 +108,9 @@ class App extends Component {
       <React.Fragment>
         <NavBar
           itemsAdded={this.state.items.filter(item => item.added).length}
+          quantity={this.state.items
+            .map(item => item.quantity)
+            .reduce((item1, item2) => item1 + item2, 0)}
           onClickNewFeed={this.handleClickNewFeed}
           onClickCart={this.handleClickCart}
         />

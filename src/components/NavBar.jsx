@@ -3,12 +3,12 @@ import React, { Component } from "react";
 class NavBar extends Component {
   getBadgeClasses() {
     let classes = "badge badge-pill badge-";
-    classes += this.props.itemsAdded === 0 ? "warning" : "success";
+    classes += this.props.quantity === 0 ? "warning" : "success";
     return classes;
   }
 
   render() {
-    const { onClickNewFeed, onClickCart, itemsAdded } = this.props;
+    const { onClickNewFeed, onClickCart, itemsAdded, quantity } = this.props;
 
     return (
       <nav className="navbar navbar-dark bg-primary">
@@ -27,7 +27,7 @@ class NavBar extends Component {
           New Feed
         </button>
         <button className="navbar-brand mb-0 bg-primary" onClick={onClickCart}>
-          Your Cart <span className={this.getBadgeClasses()}>{itemsAdded}</span>
+          Your Cart <span className={this.getBadgeClasses()}>{quantity}</span>
         </button>
       </nav>
     );

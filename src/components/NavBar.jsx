@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class NavBar extends Component {
   render() {
-    const { onClickNewFeed, onClickCart, itemAdded } = this.props;
+    const { onClickNewFeed, onClickCart, itemsAdded } = this.props;
 
     return (
       <nav className="navbar navbar-dark bg-primary">
@@ -22,7 +22,7 @@ class NavBar extends Component {
         </button>
         <button className="navbar-brand mb-0 bg-primary" onClick={onClickCart}>
           Your Cart{" "}
-          <span className="badge badge-pill badge-secondary">{itemAdded}</span>
+          <span className="badge badge-pill badge-success">{itemsAdded}</span>
         </button>
       </nav>
     );

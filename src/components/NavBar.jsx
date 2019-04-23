@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 
 class NavBar extends Component {
+  getBadgeClasses() {
+    let classes = "badge badge-pill badge-";
+    classes += this.props.itemsAdded === 0 ? "warning" : "success";
+    return classes;
+  }
+
   render() {
     const { onClickNewFeed, onClickCart, itemsAdded } = this.props;
 
@@ -21,8 +27,7 @@ class NavBar extends Component {
           New Feed
         </button>
         <button className="navbar-brand mb-0 bg-primary" onClick={onClickCart}>
-          Your Cart{" "}
-          <span className="badge badge-pill badge-success">{itemsAdded}</span>
+          Your Cart <span className={this.getBadgeClasses()}>{itemsAdded}</span>
         </button>
       </nav>
     );

@@ -14,6 +14,8 @@ class Item extends Component {
           <br />
           <strong>Price: {price}</strong>
           <br />
+          {/* If this button is clicked, it will call hanleClickAdd in App.js to
+          set button's value to the appropriate value, then re-presentation button */}
           <button
             onClick={() => onClickAdd(this.props.item)}
             className={"btn btn-sm btn-" + button}

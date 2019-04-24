@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 class NavBar extends Component {
+  // If quantity = 0, button will be set to "warning" class,
+  // otherwise it will be changed to "success" class
   getBadgeClasses() {
     let classes = "badge badge-pill badge-";
     classes += this.props.quantity === 0 ? "warning" : "success";

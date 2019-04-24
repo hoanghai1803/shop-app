@@ -7,6 +7,7 @@ class Items extends Component {
 
     return (
       <React.Fragment>
+        {/* For each item, we will call "Item" component to render it */}
         {items.map(item => (
           <Item key={item.id} item={item} onClickAdd={onClickAdd} />
         ))}

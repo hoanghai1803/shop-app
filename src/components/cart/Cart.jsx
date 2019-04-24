@@ -8,6 +8,7 @@ class Cart extends Component {
     checkouting: false
   };
 
+  // setState for checkouting state
   handleClickCheckout = () => {
     this.setState({
       checkouting: true
@@ -31,10 +32,12 @@ class Cart extends Component {
       onClickConfirmPayment
     } = this.props;
 
+    // Only keep the items that have been added
     const itemsAdded = [...items.filter(item => item.added)];
 
     return (
       <React.Fragment>
+        {/* If checkouting = false, "Counters" will be rendered */}
         {!this.state.checkouting && (
           <Counters
             items={itemsAdded}
@@ -44,9 +47,15 @@ class Cart extends Component {
             onClickRemove={onClickRemove}
           />
         )}
+
+        {/* If checkouting = false, and the quantity of items at least 1, 
+        then the "Checkout" button will appear */}
         {quantity > 0 && !this.state.checkouting && (
           <Checkout onClickCheckout={this.handleClickCheckout} />
         )}
+
+        {/* After click "Checkout" button, "checkouting" state will be set to 
+        false, and the "Form" for checkout will be rendered */}
         {this.state.checkouting && (
           <Form
             onClickReturnCart={this.handleClickReturnCart}

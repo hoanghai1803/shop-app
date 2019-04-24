@@ -17,6 +17,7 @@ class Counters extends Component {
     } = this.props;
 
     return (
+      // Use Table template of material-ui
       <React.Fragment>
         {!items.length && <h1>There is nothing in your cart!</h1>}
         <Table>
@@ -31,6 +32,7 @@ class Counters extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
+            {/* Each item will be rendered on same row */}
             {items.map(item => (
               <TableRow key={item.id}>
                 <TableCell key="item">

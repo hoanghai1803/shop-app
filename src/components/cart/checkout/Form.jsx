@@ -6,6 +6,8 @@ class Form extends Component {
 
     return (
       <React.Fragment>
+        {/* This button will call handleClickReturnCart in Cart.jsx to set checkouting 
+        state of this component to false, and render "Cart" instead of "Form" checkout */}
         <button onClick={onClickReturnCart}>Return Cart</button>
         <form onSubmit={onClickConfirmPayment}>
           <label>

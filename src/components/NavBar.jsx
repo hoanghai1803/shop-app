@@ -8,7 +8,7 @@ class NavBar extends Component {
   }
 
   render() {
-    const { onClickNewFeed, onClickCart, itemsAdded, quantity } = this.props;
+    const { onClickNewFeed, onClickCart, quantity } = this.props;
 
     return (
       <nav className="navbar navbar-dark bg-primary">
@@ -18,7 +18,7 @@ class NavBar extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          King's Ocean Shop
+          Ocean's King Shop
         </a>
         <button
           className="navbar-brand mb-0 bg-primary"

@@ -103,14 +103,31 @@ class App extends Component {
     this.handleClickAdd(item);
   };
 
+  handleClickConfirmPayment = () => {
+    alert("Thanks for payment!!!");
+    const items = this.state.items.map(item => {
+      let newItem = item;
+      newItem.added = false;
+      newItem.button = "primary";
+      newItem.message = "Add to cart";
+      newItem.quantity = 0;
+      return newItem;
+    });
+    this.setState({
+      items,
+      atNewFeed: true
+    });
+  };
+
   render() {
+    const quantity = this.state.items
+      .map(item => item.quantity)
+      .reduce((item1, item2) => item1 + item2, 0);
+
     return (
       <React.Fragment>
         <NavBar
-          itemsAdded={this.state.items.filter(item => item.added).length}
-          quantity={this.state.items
-            .map(item => item.quantity)
-            .reduce((item1, item2) => item1 + item2, 0)}
+          quantity={quantity}
           onClickNewFeed={this.handleClickNewFeed}
           onClickCart={this.handleClickCart}
         />
@@ -120,10 +137,12 @@ class App extends Component {
         {!this.state.atNewFeed && (
           <Cart
             items={this.state.items}
+            quantity={quantity}
             onClickIncrement={this.handleClickIncrement}
             onClickDecrement={this.handleClickDecrement}
             onClickReset={this.handleClickReset}
             onClickRemove={this.handleClickRemove}
+            onClickConfirmPayment={this.handleClickConfirmPayment}
           />
         )}
       </React.Fragment>

@@ -24,8 +24,10 @@ class Counter extends Component {
       <h1>
         Name: {name}
         <br />
-        Price: {price} *
-        <span className={this.getBadgeClasses()}>{quantity}</span>
+        {/* Add commas and unit to price */}
+        Price: {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+          " rub"}{" "}
+        *<span className={this.getBadgeClasses()}>{quantity}</span>
         <br />
         {/* This will call handleClickIncrement() in App.js */}
         <button

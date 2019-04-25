@@ -35,6 +35,9 @@ class Cart extends Component {
     // Only keep the items that have been added
     const itemsAdded = [...items.filter(item => item.added)];
 
+    // Only keep the items that have quantity greater than 0
+    const itemsBought = [...items.filter(item => item.quantity)];
+
     return (
       <React.Fragment>
         {/* If checkouting = false, "Counters" will be rendered */}
@@ -58,6 +61,7 @@ class Cart extends Component {
         false, and the "Form" for checkout will be rendered */}
         {this.state.checkouting && (
           <Form
+            items={itemsBought}
             onClickReturnCart={this.handleClickReturnCart}
             onClickConfirmPayment={onClickConfirmPayment}
           />

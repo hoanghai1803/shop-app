@@ -12,7 +12,11 @@ class Item extends Component {
           <br />
           <strong>{name}</strong>
           <br />
-          <strong>Price: {price}</strong>
+          {/* Add commas and unit to price */}
+          <strong>
+            Price:{" "}
+            {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " rub"}
+          </strong>
           <br />
           {/* If this button is clicked, it will call hanleClickAdd in App.js to
           set button's value to the appropriate value, then re-presentation button */}

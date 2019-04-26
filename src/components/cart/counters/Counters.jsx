@@ -1,26 +1,40 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Counter from "./Counter";
+import Paper from "@material-ui/core/Paper";
 
-class Counters extends Component {
-  render() {
-    const {
-      items,
-      onClickIncrement,
-      onClickDecrement,
-      onClickReset,
-      onClickRemove
-    } = this.props;
+const styles = theme => ({
+  root: {
+    width: "100%",
+    marginTop: theme.spacing.unit * 3,
+    overflowX: "auto"
+  },
+  table: {
+    minWidth: 700
+  }
+});
 
-    return (
-      // Use Table template of material-ui
-      <React.Fragment>
-        {!items.length && <h1>There is nothing in your cart!</h1>}
-        <Table>
+function Counters(props) {
+  const {
+    items,
+    onClickIncrement,
+    onClickDecrement,
+    onClickReset,
+    onClickRemove,
+    classes
+  } = props;
+
+  return (
+    <React.Fragment>
+      {/* Use Table template of material-ui */}
+      <Paper className={classes.root}>
+        <Table className={classes.table}>
           <TableHead>
             <TableRow>
               <TableCell align="center">
@@ -52,9 +66,14 @@ class Counters extends Component {
             ))}
           </TableBody>
         </Table>
-      </React.Fragment>
-    );
-  }
+      </Paper>
+      {!items.length && <h1>There is nothing in your cart!</h1>}
+    </React.Fragment>
+  );
 }
 
-export default Counters;
+Counters.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(Counters);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Counters from "./counters/Counters";
+import CheckoutButton from "./checkout/buttons/CheckoutButton";
 import Checkout from "./checkout/Checkout";
-import Form from "./checkout/Form";
 
 class Cart extends Component {
   state = {
@@ -54,13 +54,13 @@ class Cart extends Component {
         {/* If checkouting = false, and the quantity of items at least 1, 
         then the "Checkout" button will appear */}
         {quantity > 0 && !this.state.checkouting && (
-          <Checkout onClickCheckout={this.handleClickCheckout} />
+          <CheckoutButton onClickCheckout={this.handleClickCheckout} />
         )}
 
         {/* After click "Checkout" button, "checkouting" state will be set to 
         false, and the "Form" for checkout will be rendered */}
         {this.state.checkouting && (
-          <Form
+          <Checkout
             items={itemsBought}
             onClickReturnCart={this.handleClickReturnCart}
             onClickConfirmPayment={onClickConfirmPayment}

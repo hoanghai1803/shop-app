@@ -142,7 +142,7 @@ class App extends Component {
     // Calculate sum of quantity of all items
     const quantity = this.state.items
       .map(item => item.quantity)
-      .reduce((item1, item2) => item1 + item2, 0);
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
     return (
       <React.Fragment>

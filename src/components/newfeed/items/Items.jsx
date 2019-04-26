@@ -1,19 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import Item from "./Item";
 
-class Items extends Component {
-  render() {
-    const { items, onClickAdd } = this.props;
+function Items(props) {
+  const { items, onClickAdd } = props;
 
-    return (
-      <React.Fragment>
-        {/* For each item, we will call "Item" component to render it */}
-        {items.map(item => (
-          <Item key={item.id} item={item} onClickAdd={onClickAdd} />
-        ))}
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      {/* For each item, we will call "Item" component to render it */}
+      {items.map(item => (
+        <Item key={item.id} item={item} onClickAdd={onClickAdd} />
+      ))}
+    </React.Fragment>
+  );
 }
 
 export default Items;

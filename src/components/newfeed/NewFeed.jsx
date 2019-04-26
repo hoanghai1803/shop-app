@@ -1,12 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Items from "./items/Items";
 
-class NewFeed extends Component {
-  render() {
-    return (
-      <Items items={this.props.items} onClickAdd={this.props.onClickAdd} />
-    );
-  }
+function NewFeed(props) {
+  const { items, onClickAdd } = props;
+  return <Items items={items} onClickAdd={onClickAdd} />;
 }
 
 export default NewFeed;

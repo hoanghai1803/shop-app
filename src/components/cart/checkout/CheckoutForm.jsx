@@ -84,8 +84,6 @@ function CheckoutForm(props) {
         />
         <br />
 
-        {/* <input type="submit" value="Confirm payment!" /
-        > */}
         <ConfirmButton />
       </form>
     </React.Fragment>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Item(props) {
   const { item, onClickAdd } = props;
-  const { name, src, price, button, message } = item;
+  const { name, src, price, button, label } = item;
 
   return (
     <React.Fragment>
@@ -23,7 +23,7 @@ function Item(props) {
           onClick={() => onClickAdd(item)}
           className={"btn btn-sm btn-" + button}
         >
-          {message}
+          {label}
         </button>
       </p>
     </React.Fragment>

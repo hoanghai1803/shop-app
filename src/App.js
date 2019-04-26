@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { data } from "./data/data";
 import NavBar from "./components/NavBar";
 import NewFeed from "./components/newfeed/NewFeed";
 import Cart from "./components/cart/Cart";
@@ -6,48 +7,7 @@ import Cart from "./components/cart/Cart";
 class App extends Component {
   state = {
     atNewFeed: true,
-    items: [
-      {
-        name: "Iphone XS Max 512GB Gold",
-        id: 1,
-        src: "https://img.mvideo.ru/Pdb/30040031b.jpg",
-        price: 116990,
-        added: false,
-        button: "primary",
-        message: "Add to cart",
-        quantity: 0
-      },
-      {
-        name: "Samsung S10+",
-        id: 2,
-        src: "https://img.mvideo.ru/Pdb/30042519b.jpg",
-        price: 124990,
-        added: false,
-        button: "primary",
-        message: "Add to cart",
-        quantity: 0
-      },
-      {
-        name: "Macbook pro 15",
-        id: 3,
-        src: "https://img.mvideo.ru/Pdb/30039192b.jpg",
-        price: 528990,
-        added: false,
-        button: "primary",
-        message: "Add to cart",
-        quantity: 0
-      },
-      {
-        name: "MSI GT75VR 7RE-054RU Titan SLI",
-        id: 4,
-        src: "https://img.mvideo.ru/Pdb/30031607b.jpg",
-        price: 246990,
-        added: false,
-        button: "primary",
-        message: "Add to cart",
-        quantity: 0
-      }
-    ]
+    items: data
   };
 
   // Switch between Newfeed and Cart
@@ -64,7 +24,7 @@ class App extends Component {
   };
 
   // When click add, button will change to class "success"
-  // with message "Added"
+  // with label "Added"
   handleClickAdd = item => {
     const items = [...this.state.items];
     const index = items.indexOf(item);
@@ -72,8 +32,7 @@ class App extends Component {
 
     items[index].added = !items[index].added;
     items[index].button = items[index].added === true ? "success" : "primary";
-    items[index].message =
-      items[index].added === true ? "Added" : "Add to cart";
+    items[index].label = items[index].added === true ? "Added" : "Add to cart";
     // When click "Add to cart", default quantity will be 1
     items[index].quantity = items[index].added === true ? 1 : 0;
 
@@ -128,7 +87,7 @@ class App extends Component {
       let newItem = item;
       newItem.added = false;
       newItem.button = "primary";
-      newItem.message = "Add to cart";
+      newItem.label = "Add to cart";
       newItem.quantity = 0;
       return newItem;
     });

@@ -7,6 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import _ from "lodash";
 import Counter from "./Counter";
 import Pagination from "./Pagination";
 
@@ -57,15 +58,9 @@ class Counters extends Component {
       classes
     } = this.props;
 
-    let pages = [];
     // Each page on Cart has at most 2 items
     const numPages = Math.ceil(items.length / 2);
-    for (let index = 1; index <= numPages; index++) {
-      const page = {
-        id: index
-      };
-      pages.push(page);
-    }
+    const pages = [..._.range(1, numPages + 1)];
 
     return (
       <React.Fragment>
@@ -107,7 +102,7 @@ class Counters extends Component {
                           </TableCell>
                         </TableRow>
                       );
-                    return "";
+                    return null;
                   })}
                 </TableBody>
               </Table>

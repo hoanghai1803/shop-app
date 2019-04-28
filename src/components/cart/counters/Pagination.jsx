@@ -3,6 +3,8 @@ import React from "react";
 function Pagination(props) {
   const { pages, currentPage, onClickPagination } = props;
 
+  if (pages.length === 1) return null;
+
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
@@ -17,12 +19,15 @@ function Pagination(props) {
           </button>
         </li>
         {pages.map(page => (
-          <li key={page.id} className="page-item">
+          <li
+            key={page}
+            className={"page-item" + (page === currentPage ? " active" : "")}
+          >
             <button
               className="page-link"
-              onClick={() => onClickPagination(page.id)}
+              onClick={() => onClickPagination(page)}
             >
-              {page.id}
+              {page}
             </button>
           </li>
         ))}

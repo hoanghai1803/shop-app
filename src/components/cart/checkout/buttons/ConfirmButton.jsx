@@ -13,9 +13,7 @@ const styles = theme => ({
   }
 });
 
-function ConfirmButton(props) {
-  const { classes } = props;
-
+function ConfirmButton({ classes }) {
   return (
     <Button
       variant="contained"

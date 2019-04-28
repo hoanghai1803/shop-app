@@ -55,8 +55,6 @@ class App extends Component {
     const items = [...this.state.items];
     const index = items.indexOf(item);
     items[index] = { ...item };
-    // If the quantity equal 0, we will not continue decrease it
-    if (!items[index].quantity) return;
     items[index].quantity--;
     this.setState({ items });
   };

@@ -53,9 +53,11 @@ class Cart extends Component {
 
         {/* If checkouting = false, and the quantity of items at least 1, 
         then the "Checkout" button will appear */}
-        {quantity > 0 && !this.state.checkouting && (
-          <CheckoutButton onClickCheckout={this.handleClickCheckout} />
-        )}
+        <div align="right">
+          {quantity > 0 && !this.state.checkouting && (
+            <CheckoutButton onClickCheckout={this.handleClickCheckout} />
+          )}
+        </div>
 
         {/* After click "Checkout" button, "checkouting" state will be set to 
         false, and the "Form" for checkout will be rendered */}

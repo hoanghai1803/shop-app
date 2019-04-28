@@ -15,9 +15,7 @@ const styles = theme => ({
   }
 });
 
-function CheckoutForm(props) {
-  const { classes, onClickConfirmPayment } = props;
-
+function CheckoutForm({ classes, onClickConfirmPayment }) {
   return (
     <React.Fragment>
       <h1>Your Information</h1>

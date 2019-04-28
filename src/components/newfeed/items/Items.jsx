@@ -1,9 +1,7 @@
 import React from "react";
 import Item from "./Item";
 
-function Items(props) {
-  const { items, onClickAdd } = props;
-
+function Items({ items, onClickAdd }) {
   return (
     <React.Fragment>
       {/* For each item, we will call "Item" component to render it */}

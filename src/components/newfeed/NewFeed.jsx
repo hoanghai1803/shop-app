@@ -1,8 +1,7 @@
 import React from "react";
 import Items from "./items/Items";
 
-function NewFeed(props) {
-  const { items, onClickAdd } = props;
+function NewFeed({ items, onClickAdd }) {
   return <Items items={items} onClickAdd={onClickAdd} />;
 }
 

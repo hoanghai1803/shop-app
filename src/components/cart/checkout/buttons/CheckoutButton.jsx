@@ -15,9 +15,7 @@ const styles = theme => ({
 
 // This button will call handleClickCheckout function in Cart.jsx to set
 // checkouting state of this component to true, and render Checkout instead of Cart
-function CheckoutButton(props) {
-  const { classes, onClickCheckout } = props;
-
+function CheckoutButton({ classes, onClickCheckout }) {
   return (
     <Button
       variant="contained"

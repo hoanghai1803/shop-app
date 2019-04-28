@@ -1,7 +1,6 @@
 import React from "react";
 
-function Item(props) {
-  const { item, onClickAdd } = props;
+function Item({ item, onClickAdd }) {
   const { name, src, price, button, label } = item;
 
   return (
@@ -21,7 +20,7 @@ function Item(props) {
           set button's value to the appropriate value, then re-presentation button */}
         <button
           onClick={() => onClickAdd(item)}
-          className={"btn btn-sm btn-" + button}
+          className={"btn btn-" + button}
         >
           {label}
         </button>

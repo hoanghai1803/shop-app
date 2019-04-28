@@ -29,34 +29,46 @@ class Counter extends Component {
           " rub"}{" "}
         *<span className={this.getBadgeClasses()}>{quantity}</span>
         <br />
-        {/* This will call handleClickIncrement() in App.js */}
-        <button
-          onClick={() => onClickIncrement(item)}
-          className="btn btn-success btn-sm"
-        >
-          +
-        </button>
-        {/* This will call handleClickDecrement() function in App.js */}
-        <button
-          onClick={() => onClickDecrement(item)}
-          className="btn btn-info btn-sm"
-        >
-          -
-        </button>
-        {/* This will call handleClickReset() in App.js */}
-        <button
-          onClick={() => onClickReset(item)}
-          className="btn btn-warning btn-sm"
-        >
-          Reset
-        </button>
-        {/* This will call handleClickRemove() in App.js */}
-        <button
-          onClick={() => onClickRemove(item)}
-          className="btn btn-danger btn-sm m-2"
-        >
-          Remove
-        </button>
+        <div className="row">
+          <div className="col-1">
+            {/* This will call handleClickIncrement() in App.js */}
+            <button
+              onClick={() => onClickIncrement(item)}
+              className="btn btn-success"
+            >
+              +
+            </button>
+          </div>
+          <div className="col-1">
+            {/* This will call handleClickDecrement() function in App.js */}
+            <button
+              onClick={() => onClickDecrement(item)}
+              className="btn btn-info"
+              // If the quantity equal 0, we will not continue decrease it
+              disabled={quantity === 0 ? "disabled" : ""}
+            >
+              -
+            </button>
+          </div>
+          <div className="col-1">
+            {/* This will call handleClickReset() in App.js */}
+            <button
+              onClick={() => onClickReset(item)}
+              className="btn btn-warning"
+            >
+              Reset
+            </button>
+          </div>
+          <div className="col-1">
+            {/* This will call handleClickRemove() in App.js */}
+            <button
+              onClick={() => onClickRemove(item)}
+              className="btn btn-danger m-2"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
       </h1>
     );
   }

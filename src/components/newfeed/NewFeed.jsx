@@ -50,7 +50,7 @@ class NewFeed extends Component {
             currentValueNav={currentValueNav}
             onClickAdd={onClickAdd}
           />
-          <div>
+          <div style={{ position: "fixed", bottom: "0", width: "100%" }}>
             <Navigation
               value={currentValueNav}
               onChangeNavigation={this.handleChangeNavigation}

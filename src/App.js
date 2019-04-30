@@ -125,25 +125,29 @@ class App extends Component {
 
         {/* If atNewFeed = true, render NewFeed */}
         {atNewFeed && (
-          <NewFeed
-            items={items}
-            onClickLike={this.handleClickLike}
-            categories={categories}
-            onClickAdd={this.handleClickAdd}
-          />
+          <div style={{ marginTop: "80px" }}>
+            <NewFeed
+              items={items}
+              onClickLike={this.handleClickLike}
+              categories={categories}
+              onClickAdd={this.handleClickAdd}
+            />
+          </div>
         )}
 
         {/* If atNewFeed = false, render Cart */}
         {!atNewFeed && (
-          <Cart
-            items={items}
-            quantity={quantity}
-            onClickIncrement={this.handleClickIncrement}
-            onClickDecrement={this.handleClickDecrement}
-            onClickReset={this.handleClickReset}
-            onClickRemove={this.handleClickRemove}
-            onClickConfirmPayment={this.handleClickConfirmPayment}
-          />
+          <div style={{ marginTop: "100px" }}>
+            <Cart
+              items={items}
+              quantity={quantity}
+              onClickIncrement={this.handleClickIncrement}
+              onClickDecrement={this.handleClickDecrement}
+              onClickReset={this.handleClickReset}
+              onClickRemove={this.handleClickRemove}
+              onClickConfirmPayment={this.handleClickConfirmPayment}
+            />
+          </div>
         )}
       </React.Fragment>
     );

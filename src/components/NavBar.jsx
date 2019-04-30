@@ -13,10 +13,7 @@ class NavBar extends Component {
     const { onClickNewFeed, onClickCart, quantity } = this.props;
 
     return (
-      <nav
-        className="navbar navbar-dark bg-primary navbar-static-top"
-        // style={{ fixed: top, zIndex: 1 }}
-      >
+      <nav className="navbar navbar-dark bg-primary fixed-top">
         <a
           className="navbar-brand mb-0 h1"
           href="https://www.facebook.com/hoanghai123098"

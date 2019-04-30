@@ -13,7 +13,7 @@ const styles = theme => ({
   }
 });
 
-function ConfirmButton({ classes }) {
+const ConfirmButton = ({ classes }) => {
   return (
     <Button
       variant="contained"
@@ -25,7 +25,7 @@ function ConfirmButton({ classes }) {
       <Send className={classes.rightIcon} />
     </Button>
   );
-}
+};
 
 ConfirmButton.propTypes = {
   classes: PropTypes.object.isRequired

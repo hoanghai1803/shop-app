@@ -21,14 +21,16 @@ class Checkout extends Component {
             <li key={item.id} className="list-group-item">
               <strong>{item.name}</strong>
               <br />
-              Price: {this.formatPrice(item.price)} * {item.quantity} ={" "}
-              {this.formatPrice(item.price * item.quantity)}
+              <i>
+                Price: {this.formatPrice(item.price)} * {item.quantity} ={" "}
+                {this.formatPrice(item.price * item.quantity)}
+              </i>
             </li>
           ))}
           <li>
             {/* Compute total price */}
             <h4>Total: </h4>
-            <strong>
+            <h3>
               {this.formatPrice(
                 items
                   .map(item => item.price * item.quantity)
@@ -37,7 +39,7 @@ class Checkout extends Component {
                     0
                   )
               )}
-            </strong>
+            </h3>
           </li>
         </ul>
 

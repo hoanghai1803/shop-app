@@ -15,7 +15,7 @@ const styles = theme => ({
 
 // This button will call handleClickReturnCart function in Cart.jsx to set
 // checkouting state of this component to false, and render Cart instead of Checkout
-function ReturnButton({ onClickReturnCart, classes }) {
+const ReturnButton = ({ onClickReturnCart, classes }) => {
   return (
     <Button
       variant="contained"
@@ -27,7 +27,7 @@ function ReturnButton({ onClickReturnCart, classes }) {
       Return Cart
     </Button>
   );
-}
+};
 
 ReturnButton.propTypes = {
   classes: PropTypes.object.isRequired

@@ -22,7 +22,6 @@ const styles = theme => ({
   }
 });
 
-// function Counters(props) {
 class Counters extends Component {
   state = {
     currentPage: 1
@@ -49,6 +48,8 @@ class Counters extends Component {
   };
 
   render() {
+    const { currentPage } = this.state;
+
     const {
       items,
       onClickIncrement,
@@ -84,7 +85,7 @@ class Counters extends Component {
                   {items.map(item => {
                     // Check if this item is on this page
                     const atPage = Math.floor(items.indexOf(item) / 2) + 1;
-                    if (atPage === this.state.currentPage)
+                    if (atPage === currentPage)
                       return (
                         <TableRow key={item.id}>
                           <TableCell key="item">
@@ -109,7 +110,7 @@ class Counters extends Component {
             </Paper>
             <Pagination
               pages={pages}
-              currentPage={this.state.currentPage}
+              currentPage={currentPage}
               onClickPagination={this.handleClickPagination}
             />
           </div>

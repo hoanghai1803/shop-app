@@ -15,7 +15,7 @@ const styles = theme => ({
 
 // This button will call handleClickCheckout function in Cart.jsx to set
 // checkouting state of this component to true, and render Checkout instead of Cart
-function CheckoutButton({ classes, onClickCheckout }) {
+const CheckoutButton = ({ classes, onClickCheckout }) => {
   return (
     <Button
       variant="contained"
@@ -27,7 +27,7 @@ function CheckoutButton({ classes, onClickCheckout }) {
       <NavigateNext className={classes.rightIcon} />
     </Button>
   );
-}
+};
 
 CheckoutButton.propTypes = {
   classes: PropTypes.object.isRequired

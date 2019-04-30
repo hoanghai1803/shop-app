@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { data } from "./data/data";
+import { categories, data } from "./data/data";
 import NavBar from "./components/NavBar";
 import NewFeed from "./components/newfeed/NewFeed";
 import Cart from "./components/cart/Cart";
@@ -7,7 +7,8 @@ import Cart from "./components/cart/Cart";
 class App extends Component {
   state = {
     atNewFeed: true,
-    items: data
+    items: data,
+    categories: categories
   };
 
   // Switch between Newfeed and Cart
@@ -21,6 +22,17 @@ class App extends Component {
     this.setState({
       atNewFeed: false
     });
+  };
+
+  //Function to switch between like and unlike
+  handleClickLike = item => {
+    const items = [...this.state.items];
+    const index = items.indexOf(item);
+    items[index] = { ...item };
+
+    items[index].liked = !items[index].liked;
+
+    this.setState({ items });
   };
 
   // When click add, button will change to class "success"
@@ -77,8 +89,8 @@ class App extends Component {
   };
 
   // After fill information and confirm on the checkout site, this function will
-  // be called to set all states to the initial states. Finally, convert
-  // to NewFeed site
+  // be called to set all states to the initial states, but will not reset liked
+  // items. Finally, switch to NewFeed site
   handleClickConfirmPayment = () => {
     alert("Thanks for payment!!!");
     const items = this.state.items.map(item => {
@@ -96,8 +108,10 @@ class App extends Component {
   };
 
   render() {
+    const { atNewFeed, items, categories } = this.state;
+
     // Calculate sum of quantity of all items
-    const quantity = this.state.items
+    const quantity = items
       .map(item => item.quantity)
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
@@ -110,14 +124,19 @@ class App extends Component {
         />
 
         {/* If atNewFeed = true, render NewFeed */}
-        {this.state.atNewFeed && (
-          <NewFeed items={this.state.items} onClickAdd={this.handleClickAdd} />
+        {atNewFeed && (
+          <NewFeed
+            items={items}
+            onClickLike={this.handleClickLike}
+            categories={categories}
+            onClickAdd={this.handleClickAdd}
+          />
         )}
 
         {/* If atNewFeed = false, render Cart */}
-        {!this.state.atNewFeed && (
+        {!atNewFeed && (
           <Cart
-            items={this.state.items}
+            items={items}
             quantity={quantity}
             onClickIncrement={this.handleClickIncrement}
             onClickDecrement={this.handleClickDecrement}

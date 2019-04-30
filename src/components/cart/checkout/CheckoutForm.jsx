@@ -15,7 +15,7 @@ const styles = theme => ({
   }
 });
 
-function CheckoutForm({ classes, onClickConfirmPayment }) {
+const CheckoutForm = ({ classes, onClickConfirmPayment }) => {
   return (
     <React.Fragment>
       <h1>Your Information</h1>
@@ -86,7 +86,7 @@ function CheckoutForm({ classes, onClickConfirmPayment }) {
       </form>
     </React.Fragment>
   );
-}
+};
 
 CheckoutForm.propTypes = {
   classes: PropTypes.object.isRequired

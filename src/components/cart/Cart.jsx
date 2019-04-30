@@ -22,6 +22,8 @@ class Cart extends Component {
   };
 
   render() {
+    const { checkouting } = this.state;
+
     const {
       items,
       quantity,
@@ -41,7 +43,7 @@ class Cart extends Component {
     return (
       <React.Fragment>
         {/* If checkouting = false, "Counters" will be rendered */}
-        {!this.state.checkouting && (
+        {!checkouting && (
           <Counters
             items={itemsAdded}
             onClickIncrement={onClickIncrement}
@@ -54,14 +56,14 @@ class Cart extends Component {
         {/* If checkouting = false, and the quantity of items at least 1, 
         then the "Checkout" button will appear */}
         <div align="right">
-          {quantity > 0 && !this.state.checkouting && (
+          {quantity > 0 && !checkouting && (
             <CheckoutButton onClickCheckout={this.handleClickCheckout} />
           )}
         </div>
 
         {/* After click "Checkout" button, "checkouting" state will be set to 
         false, and the "Form" for checkout will be rendered */}
-        {this.state.checkouting && (
+        {checkouting && (
           <Checkout
             items={itemsBought}
             onClickReturnCart={this.handleClickReturnCart}

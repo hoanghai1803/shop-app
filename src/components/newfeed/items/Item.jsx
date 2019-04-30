@@ -1,6 +1,7 @@
 import React from "react";
+import Like from "./Like";
 
-function Item({ item, onClickAdd }) {
+const Item = ({ item, onClickLike, onClickAdd }) => {
   const { name, src, price, button, label } = item;
 
   return (
@@ -16,6 +17,7 @@ function Item({ item, onClickAdd }) {
           {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " rub"}
         </strong>
         <br />
+        <Like item={item} onClickLike={onClickLike} />
         {/* If this button is clicked, it will call hanleClickAdd in App.js to
           set button's value to the appropriate value, then re-presentation button */}
         <button
@@ -27,6 +29,6 @@ function Item({ item, onClickAdd }) {
       </p>
     </React.Fragment>
   );
-}
+};
 
 export default Item;

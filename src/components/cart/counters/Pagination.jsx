@@ -1,8 +1,6 @@
 import React from "react";
 
-function Pagination(props) {
-  const { pages, currentPage, onClickPagination } = props;
-
+const Pagination = ({ pages, currentPage, onClickPagination }) => {
   if (pages.length === 1) return null;
 
   return (
@@ -44,6 +42,6 @@ function Pagination(props) {
       </ul>
     </nav>
   );
-}
+};
 
 export default Pagination;

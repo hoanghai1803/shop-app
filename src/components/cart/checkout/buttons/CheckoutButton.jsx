@@ -15,13 +15,14 @@ const styles = theme => ({
 
 // This button will call handleClickCheckout function in Cart.jsx to set
 // checkouting state of this component to true, and render Checkout instead of Cart
-const CheckoutButton = ({ classes, onClickCheckout }) => {
+const CheckoutButton = ({ classes, onClickCheckout, disabled }) => {
   return (
     <Button
       variant="contained"
       color="primary"
       className={classes.button}
       onClick={onClickCheckout}
+      disabled={disabled}
     >
       Checkout
       <NavigateNext className={classes.rightIcon} />

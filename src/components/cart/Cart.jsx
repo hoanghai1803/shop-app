@@ -59,6 +59,9 @@ class Cart extends Component {
           {quantity > 0 && !checkouting && (
             <CheckoutButton onClickCheckout={this.handleClickCheckout} />
           )}
+          {quantity === 0 && itemsAdded.length > 0 && (
+            <CheckoutButton disabled="disabled" />
+          )}
         </div>
 
         {/* After click "Checkout" button, "checkouting" state will be set to 

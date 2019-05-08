@@ -15,18 +15,16 @@ const styles = {
 
 const Navigation = ({ value, onChangeNavigation, classes }) => {
   return (
-    <div align="center">
-      <BottomNavigation
-        value={value}
-        onChange={onChangeNavigation}
-        showLabels
-        className={classes.root}
-      >
-        <BottomNavigationAction label="Timeline" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Discount" icon={<EuroSymbol />} />
-      </BottomNavigation>
-    </div>
+    <BottomNavigation
+      value={value}
+      onChange={onChangeNavigation}
+      showLabels
+      className={classes.root}
+    >
+      <BottomNavigationAction label="Timeline" icon={<RestoreIcon />} />
+      <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+      <BottomNavigationAction label="Discount" icon={<EuroSymbol />} />
+    </BottomNavigation>
   );
 };
 

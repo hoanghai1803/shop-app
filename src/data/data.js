@@ -9,7 +9,6 @@ export const categories = [
 
 const generalInfo = {
   liked: false,
-  discounted: false,
   added: false,
   button: "primary",
   label: "Add to cart",
@@ -23,6 +22,7 @@ export const data = [
       id: 1,
       src: "https://img.mvideo.ru/Pdb/30040031b.jpg",
       price: 116990,
+      discounted: false,
       category: categories[1]
     },
     generalInfo
@@ -33,6 +33,7 @@ export const data = [
       id: 2,
       src: "https://img.mvideo.ru/Pdb/30042519b.jpg",
       price: 124990,
+      discounted: false,
       category: categories[1]
     },
     generalInfo
@@ -43,6 +44,7 @@ export const data = [
       id: 3,
       src: "https://img.mvideo.ru/Pdb/30039192b.jpg",
       price: 528990,
+      discounted: false,
       category: categories[2]
     },
     generalInfo
@@ -53,6 +55,7 @@ export const data = [
       id: 4,
       src: "https://img.mvideo.ru/Pdb/30031607b.jpg",
       price: 246990,
+      discounted: false,
       category: categories[2]
     },
     generalInfo
@@ -63,6 +66,7 @@ export const data = [
       id: 5,
       src: "https://img.mvideo.ru/Pdb/30030525b.jpg",
       price: 89990,
+      discounted: false,
       category: categories[3]
     },
     generalInfo
@@ -73,6 +77,7 @@ export const data = [
       id: 6,
       src: "https://img.mvideo.ru/Pdb/50119556b.jpg",
       price: 11990,
+      discounted: false,
       category: categories[4]
     },
     generalInfo
@@ -83,6 +88,7 @@ export const data = [
       id: 7,
       src: "https://img.mvideo.ru/Pdb/10009590b.jpg",
       price: 419990,
+      discounted: false,
       category: categories[5]
     },
     generalInfo
@@ -93,6 +99,7 @@ export const data = [
       id: 8,
       src: "https://img.mvideo.ru/Pdb/30042534b.jpg",
       price: 229990,
+      discounted: false,
       category: categories[2]
     },
     generalInfo
@@ -103,6 +110,7 @@ export const data = [
       id: 9,
       src: "https://img.mvideo.ru/Pdb/30043238b.jpg",
       price: 209990,
+      discounted: false,
       category: categories[2]
     },
     generalInfo
@@ -113,6 +121,7 @@ export const data = [
       id: 10,
       src: "https://img.mvideo.ru/Pdb/10013773b.jpg",
       price: 399990,
+      discounted: false,
       category: categories[5]
     },
     generalInfo
@@ -123,6 +132,7 @@ export const data = [
       id: 11,
       src: "https://img.mvideo.ru/Pdb/30041811b.jpg",
       price: 125990,
+      discounted: false,
       category: categories[1]
     },
     generalInfo
@@ -133,6 +143,7 @@ export const data = [
       id: 12,
       src: "https://img.mvideo.ru/Pdb/30042590b.jpg",
       price: 44990,
+      discounted: false,
       category: categories[1]
     },
     generalInfo
@@ -143,6 +154,7 @@ export const data = [
       id: 13,
       src: "https://img.mvideo.ru/Pdb/30041189b.jpg",
       price: 39990,
+      discounted: false,
       category: categories[1]
     },
     generalInfo
@@ -153,6 +165,7 @@ export const data = [
       id: 14,
       src: "https://img.mvideo.ru/Pdb/50119553b.jpg",
       price: 9990,
+      discounted: false,
       category: categories[4]
     },
     generalInfo
@@ -163,6 +176,7 @@ export const data = [
       id: 15,
       src: "https://img.mvideo.ru/Pdb/30043369b.jpg",
       price: 299990,
+      discounted: false,
       category: categories[3]
     },
     generalInfo
@@ -173,6 +187,7 @@ export const data = [
       id: 16,
       src: "https://img.mvideo.ru/Pdb/30042967b.jpg",
       price: 180790,
+      discounted: false,
       category: categories[3]
     },
     generalInfo
@@ -183,7 +198,34 @@ export const data = [
       id: 17,
       src: "https://img.mvideo.ru/Pdb/50050676b.jpg",
       price: 8990,
+      discounted: false,
       category: categories[4]
+    },
+    generalInfo
+  ),
+  Object.assign(
+    {
+      name: "Digital Camera Sony DSC-RX10M4",
+      id: 18,
+      src: "https://img.mvideo.ru/Pdb/10020239b.jpg",
+      price: 103990,
+      discounted: true,
+      originalPrice: 129990,
+      discountRate: 20,
+      category: categories[5]
+    },
+    generalInfo
+  ),
+  Object.assign(
+    {
+      name: "Notebook Gaming HP Pavilion 17-ab427ur 5MH95EA",
+      id: 19,
+      src: "https://img.mvideo.ru/Pdb/30041323b.jpg",
+      price: 98990,
+      discounted: true,
+      originalPrice: 109990,
+      discountRate: 10,
+      category: categories[2]
     },
     generalInfo
   )

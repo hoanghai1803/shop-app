@@ -44,22 +44,24 @@ class Counter extends Component {
             <button
               onClick={() => onClickDecrement(item)}
               className="btn btn-info"
-              // If the quantity equal 0, we will not continue decrease it
+              // If the quantity equal 0, we cannot continue decrease it
               disabled={quantity === 0 ? "disabled" : ""}
             >
               -
             </button>
           </div>
-          <div className="col-1">
+          <div className="col-2">
             {/* This will call handleClickReset() in App.js */}
             <button
               onClick={() => onClickReset(item)}
               className="btn btn-warning"
+              // If the quantity equal 0, we cannot reset it
+              disabled={quantity === 0 ? "disabled" : ""}
             >
               Reset
             </button>
           </div>
-          <div className="col-1">
+          <div className="col">
             {/* This will call handleClickRemove() in App.js */}
             <button
               onClick={() => onClickRemove(item)}
